@@ -40,7 +40,13 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel.compose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
+            // Ktor
             implementation(libs.bundles.ktor)
+
+            //Koin
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+            implementation(libs.koin.compose.viewmodel.navigation)
         }
         
         androidMain.dependencies {
