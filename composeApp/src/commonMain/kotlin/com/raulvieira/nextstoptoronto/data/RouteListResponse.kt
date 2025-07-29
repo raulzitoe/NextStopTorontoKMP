@@ -19,6 +19,7 @@ data class RouteLineModel(
     val title: String
 ) {
     fun toDomain() = Line(
-        title = title
+        title = title,
+        routeTag = routeTag
     )
 }

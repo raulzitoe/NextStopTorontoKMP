@@ -15,6 +15,10 @@ class HomeViewModel(
     val state = _state.asStateFlow()
 
     init {
+        initializeScreenState()
+    }
+
+    private fun initializeScreenState() {
         viewModelScope.launch {
             repository.getRouteList().onSuccess { response ->
                 _state.update { HomeUiSate.Success(response.toDomain()) }
@@ -22,5 +26,9 @@ class HomeViewModel(
                 _state.update { HomeUiSate.Error(throwable.message ?: "Unknown error") }
             }
         }
+    }
+
+    fun onRefresh() {
+        if (state.value !is HomeUiSate.Success) initializeScreenState()
     }
 }

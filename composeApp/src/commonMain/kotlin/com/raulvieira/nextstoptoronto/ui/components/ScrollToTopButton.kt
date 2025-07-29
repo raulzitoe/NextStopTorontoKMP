@@ -1,0 +1,57 @@
+package com.raulvieira.nextstoptoronto.ui.components
+
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowUp
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.raulvieira.nextstoptoronto.ui.theme.NextStopTorontoTheme
+import org.jetbrains.compose.ui.tooling.preview.Preview
+
+@Composable
+fun ScrollToTopButton(
+    showButton: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    AnimatedVisibility(
+        visible = showButton,
+        enter = fadeIn(),
+        exit = fadeOut(),
+    ) {
+        Box(
+            modifier = modifier
+                .fillMaxSize()
+                .padding(bottom = 10.dp), Alignment.BottomCenter
+        ) {
+            Button(
+                onClick = { onClick() }, modifier = Modifier
+            ) {
+                Icon(Icons.Filled.KeyboardArrowUp, "Arrow up icon")
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+private fun ScrollToTopButtonPreview() {
+    NextStopTorontoTheme {
+        Surface {
+            ScrollToTopButton(
+                showButton = true,
+                onClick = {}
+            )
+        }
+    }
+}

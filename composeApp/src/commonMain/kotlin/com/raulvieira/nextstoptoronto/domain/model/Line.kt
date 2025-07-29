@@ -1,5 +1,6 @@
 package com.raulvieira.nextstoptoronto.domain.model
 
 data class Line(
-    val title: String
+    val title: String,
+    val routeTag: String
 )
