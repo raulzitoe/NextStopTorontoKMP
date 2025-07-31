@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NextStopToronto</string>
+    <string name="home">Home</string>
+    <string name="map_name">Map</string>
+    <string name="near_me">Near Me</string>
+    <string name="favorites">Favorites</string>
+</resources>

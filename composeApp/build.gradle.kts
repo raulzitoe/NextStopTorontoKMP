@@ -50,6 +50,9 @@ kotlin {
 
             // Material Icons
             implementation(libs.material.icons.extended)
+
+            //Compose navigation
+            implementation(libs.navigation.compose)
         }
         
         androidMain.dependencies {
